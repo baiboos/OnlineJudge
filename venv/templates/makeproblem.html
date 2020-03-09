@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>题目制作</title>
+</head>
+<body>
+<form method="POST" >
+    题目编号:<input type="text" name="problemId"/>
+    <br>
+    标题:<input type="text" name="problemTitle"/>
+    <br>
+    题目描述: <br>
+    <textarea name="content" rows="100" cols=100 style="width:800px; height:200px"></textarea>
+    <br>
+    输入格式示例:<input type="text" name="inputType"/>
+    <br>
+    输出格式示例:<input type="text" name="outputType"/>
+    <br>
+    <input type="submit" value="提交"/>
+    {% for message in get_flashed_messages(category_filter='nullexist') %}
+        {{ message }}
+    {% endfor%}
+
+</form>
+</body>
+</html>

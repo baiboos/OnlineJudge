@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账号注册</title>
+</head>
+<body>
+<form method="POST" >
+    姓名:<input type="text" name="name"/>
+
+    {% for message in get_flashed_messages(category_filter='namenull') %}
+        {{ message}}
+    {% endfor%}
+    <br>
+    学号:<input type="text" name="id"/>
+     {% for message in get_flashed_messages(category_filter='idnull') %}
+        {{ message}}
+    {% endfor%}
+    <br>
+    密码:<input type="password" name="password"/>
+     {% for message in get_flashed_messages(category_filter='passwordnull') %}
+        {{ message}}
+    {% endfor%}
+    <br>
+    确认密码:<input type="password" name="password2"/>
+     {% for message in get_flashed_messages(category_filter='password2null') %}
+        {{ message}}
+    {% endfor%}
+    <br>
+
+    <input type="submit" value="提交"/>
+    <br>
+    {% for message in get_flashed_messages(category_filter='notequal') %}
+        {{ message }}
+    {% endfor%}
+
+</form>
+
+</body>
+</html>
